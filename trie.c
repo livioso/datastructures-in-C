@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "trie.h"
 
-trieNode* createNode(char key, int value)
+trieNode* createTrieNode(char key, int value)
 {
 	trieNode* node = NULL;
 	node = (trieNode*) malloc(sizeof(trieNode));
@@ -20,9 +20,15 @@ trieNode* createNode(char key, int value)
 	return node;
 }
 
-trieNode* addNode(trieNode* root, char key, int value)
+void addTrie(trieNode* root, char* key, int value)
 {
-	return NULL; 
+	if(NULL != root) {
+		printf(" ----> Debug -- Inserting (key, value) pair: (%s, %i)\n", key, value);
+
+		trieNode* traversal = root->children;
+	}
 }
+
+trieNode find
 
 

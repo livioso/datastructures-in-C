@@ -7,5 +7,5 @@ typedef struct trie {
 	struct trie* parent;
 } trieNode;
 
-trieNode* createNode(char key, int value);
-trieNode* addNode(trieNode* root, char key, int value);
+trieNode* createTrieNode(char key, int value);
+void addTrie(trieNode* root, char* key, int value);

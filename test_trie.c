@@ -3,41 +3,46 @@
 #include "assert.h"
 #include "trie.h"
 
+#define runTestCase(testingFunction) \
+	printf(" >>> %s \n", #testingFunction); \
+	testingFunction(); \
+	printf(" <<< Passed :-) \n");
+
 void testCreateTrie ()
 {
-	printf(" >> testCreateTrie \n");
-
-	trieNode* underTest = createNode('a', 1);
+	trieNode* underTest = createTrieNode('a', 1);
 	assert(underTest != NULL);
 }
 
 void testKeyValue ()
 {
-	printf(" >> testKeyValue \n");
-
-	trieNode* underTest = createNode('a', 1);
+	trieNode* underTest = createTrieNode('a', 1);
 	assert('a' == underTest->key);
 	assert(1 == underTest->value);
 }
 
-void testAddNode ()
+void testAddGoodCase ()
 {
-	printf(" >> testAddNode \n");
+	trieNode* root = createTrieNode('\0', 1);
+	addTrie(root, "test", 1);
+	assert(1 == 1);
+}
 
-	trieNode* root = createNode('x', 1);
-	addNode(root, 'y', 10);
-
-	trieNode* addNode(trieNode* root, char key, int value);
-	assert(0 == 1);
+void testAddRootNull ()
+{
+	trieNode* root = NULL;
+	addTrie(root, "test", 1);
+	assert(NULL == root);
 }
 
 int main()
 {
 	printf("Running tests now... \n");
 
-	testCreateTrie();
-	testKeyValue();
-	testAddNode();
+	runTestCase(testCreateTrie);
+	runTestCase(testKeyValue);
+	runTestCase(testAddGoodCase);
+	runTestCase(testAddRootNull);
 
 	return 0;
 }
