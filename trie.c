@@ -9,7 +9,7 @@ trieNode* createNode(char key, int value)
 
 	if(NULL == node) {
 		printf("malloc failed");
-		return node; 
+		return node;
 	}
 
 	node->key = key;
@@ -19,3 +19,10 @@ trieNode* createNode(char key, int value)
 
 	return node;
 }
+
+trieNode* addNode(trieNode* root, char key, int value)
+{
+	return NULL; 
+}
+
+

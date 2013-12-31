@@ -20,12 +20,24 @@ void testKeyValue ()
 	assert(1 == underTest->value);
 }
 
+void testAddNode ()
+{
+	printf(" >> testAddNode \n");
+
+	trieNode* root = createNode('x', 1);
+	addNode(root, 'y', 10);
+
+	trieNode* addNode(trieNode* root, char key, int value);
+	assert(0 == 1);
+}
+
 int main()
 {
 	printf("Running tests now... \n");
 
 	testCreateTrie();
 	testKeyValue();
+	testAddNode();
 
 	return 0;
 }
