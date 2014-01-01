@@ -29,6 +29,13 @@ void addTrie(trieNode* root, char* key, int value)
 	}
 }
 
-trieNode find
+bool isKeyInTrie(trieNode* root, char* key)
+{
+	if(0 == strlen(key)) {
+		return false;
+	}
+
+	return false;
+}
 
 
