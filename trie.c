@@ -33,8 +33,7 @@ void addTrie(trieNode* root, char* key, int value)
 
 bool isKeyInTrie(trieNode* root, char* key)
 {
-
-	if(0 == strlen(key) || NULL == root ) {
+	if(0 == strlen(key) || NULL == root) {
 		return false;
 	}
 
