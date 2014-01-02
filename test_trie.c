@@ -37,13 +37,15 @@ void testAddRootNull ()
 
 void testIsKeyInTrieWhenRootNull ()
 {
-	assert(false == isKeyInTrie(NULL, "whatever"));
+	bool keyFound = isKeyInTrie(NULL, "whatever");
+	assert(!keyFound);
 }
 
 void testIsKeyInTrieWhenKeyEmtpy ()
 {
 	trieNode* root = createTrieNode('\0', 1);
-	assert(false == isKeyInTrie(root, ""));
+	bool keyFound = isKeyInTrie(root, "");
+	assert(!keyFound);
 }
 
 int main()
