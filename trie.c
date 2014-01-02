@@ -1,6 +1,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "trie.h"
+#include "string.h"
+#include "stdbool.h"
 
 trieNode* createTrieNode(char key, int value)
 {
@@ -31,11 +33,12 @@ void addTrie(trieNode* root, char* key, int value)
 
 bool isKeyInTrie(trieNode* root, char* key)
 {
-	if(0 == strlen(key)) {
+
+	if(0 == strlen(key) || NULL == root ) {
 		return false;
 	}
 
-	return false;
+	return true;
 }
 
 

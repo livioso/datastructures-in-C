@@ -35,6 +35,17 @@ void testAddRootNull ()
 	assert(NULL == root);
 }
 
+void testIsKeyInTrieWhenRootNull ()
+{
+	assert(false == isKeyInTrie(NULL, "whatever"));
+}
+
+void testIsKeyInTrieWhenKeyEmtpy ()
+{
+	trieNode* root = createTrieNode('\0', 1);
+	assert(false == isKeyInTrie(root, ""));
+}
+
 int main()
 {
 	printf("Running tests now... \n");
@@ -43,6 +54,8 @@ int main()
 	runTestCase(testKeyValue);
 	runTestCase(testAddGoodCase);
 	runTestCase(testAddRootNull);
+	runTestCase(testIsKeyInTrieWhenRootNull);
+	runTestCase(testIsKeyInTrieWhenKeyEmtpy);
 
 	return 0;
 }
