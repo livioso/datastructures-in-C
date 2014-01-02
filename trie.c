@@ -2,7 +2,6 @@
 #include "stdlib.h"
 #include "trie.h"
 #include "string.h"
-#include "stdbool.h"
 
 trieNode* createTrieNode(char key, int value)
 {
