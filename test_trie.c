@@ -35,6 +35,15 @@ void testAddRootNull ()
 	assert(NULL == root);
 }
 
+void testIsKeyInTrieWhenKeyExists ()
+{
+	trieNode* root = createTrieNode('\0', 1);
+	addTrie(root, "key", 1);
+
+	bool keyFound = isKeyInTrie(root, "key");
+	assert(keyFound);
+}
+
 void testIsKeyInTrieWhenRootNull ()
 {
 	bool keyFound = isKeyInTrie(NULL, "whatever");
@@ -58,6 +67,7 @@ int main()
 	runTestCase(testAddRootNull);
 	runTestCase(testIsKeyInTrieWhenRootNull);
 	runTestCase(testIsKeyInTrieWhenKeyEmtpy);
+	runTestCase(testIsKeyInTrieWhenKeyExists);
 
 	return 0;
 }

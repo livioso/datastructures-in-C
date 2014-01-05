@@ -36,7 +36,7 @@ bool isKeyInTrie(trieNode* root, char* key)
 		return false;
 	}
 
-	return true;
+	return false;
 }
 
 
