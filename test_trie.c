@@ -57,6 +57,21 @@ void testIsKeyInTrieWhenKeyEmtpy ()
 	assert(!keyFound);
 }
 
+void testHasCharacterInNext ()
+{
+	trieNode* nodeA = createTrieNode('A', 1);
+	trieNode* nodeB = createTrieNode('B', 2);
+	trieNode* nodeC = createTrieNode('C', 3);
+
+	nodeA->next = nodeB;
+	nodeB->next = nodeC;
+
+	// expected to be found: A B and NOT A
+	assert(hasCharacterInNext(nodeB, 'B'));
+	assert(hasCharacterInNext(nodeB, 'C'));
+	assert(!hasCharacterInNext(nodeB, 'A'));
+}
+
 int main()
 {
 	printf("Running tests now... \n");
@@ -65,9 +80,10 @@ int main()
 	runTestCase(testKeyValue);
 	runTestCase(testAddGoodCase);
 	runTestCase(testAddRootNull);
-	runTestCase(testIsKeyInTrieWhenRootNull);
-	runTestCase(testIsKeyInTrieWhenKeyEmtpy);
-	runTestCase(testIsKeyInTrieWhenKeyExists);
+	//runTestCase(testIsKeyInTrieWhenKeyExists);
+	//runTestCase(testIsKeyInTrieWhenRootNull);
+	//runTestCase(testIsKeyInTrieWhenKeyEmtpy);
+	runTestCase(testHasCharacterInNext);
 
 	return 0;
 }
