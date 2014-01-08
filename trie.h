@@ -12,3 +12,4 @@ typedef struct trie {
 trieNode* createTrieNode(char key, int value);
 void addTrie(trieNode* root, char* key, int value);
 bool isKeyInTrie(trieNode* root, char* key);
+trieNode* hasCharacterInNext (trieNode* start, char character);
