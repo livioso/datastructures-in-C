@@ -1,12 +1,8 @@
-#include "stdio.h"
-#include "stdbool.h"
-#include "assert.h"
+#include "test_common.h"
 #include "trie.h"
-
-#define runTestCase(testingFunction) \
-	printf(" >>> %s \n", #testingFunction); \
-	testingFunction(); \
-	printf(" <<< Passed :-) \n");
+#include <stdio.h>
+#include <stdbool.h>
+#include <assert.h>
 
 void testCreateTrie ()
 {
@@ -79,7 +75,7 @@ void testHasCharacterInNext ()
 	assert(!hasCharacterInNext(nodeB, 'A'));
 }
 
-int main()
+int main ()
 {
 	printf("Running tests now... \n");
 
@@ -87,7 +83,7 @@ int main()
 	runTestCase(testKeyValue);
 	runTestCase(testAddGoodCase);
 	runTestCase(testAddRootNull);
-	runTestCase(testIsKeyInTrieWhenKeyExists);
+	//runTestCase(testIsKeyInTrieWhenKeyExists);
 	//runTestCase(testIsKeyInTrieWhenRootNull);
 	//runTestCase(testIsKeyInTrieWhenKeyEmtpy);
 	runTestCase(testHasCharacterInNext);

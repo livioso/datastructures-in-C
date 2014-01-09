@@ -1,4 +1,4 @@
-#include "stdbool.h"
+#include <stdbool.h>
 
 typedef struct trie {
 	char key;

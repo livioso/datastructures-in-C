@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "stdlib.h"
 #include "trie.h"
-#include "string.h"
-#include "assert.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 
 trieNode* createTrieNode(char key, int value)
 {
@@ -10,7 +10,7 @@ trieNode* createTrieNode(char key, int value)
 	node = (trieNode*) malloc(sizeof(trieNode));
 
 	if(NULL == node) {
-		printf("malloc failed");
+		printf("----> Debug -- Malloc failed! :-/");
 		return node;
 	}
 
