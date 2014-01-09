@@ -38,16 +38,23 @@ void testAddRootNull ()
 void testIsKeyInTrieWhenKeyExists ()
 {
 	trieNode* root = createTrieNode('\0', 1);
-	addTrie(root, "key", 1);
+	trieNode* kCharacter = createTrieNode('k', 1);
+	trieNode* eCharacter = createTrieNode('e', 2);
+	trieNode* yCharacter = createTrieNode('y', 3);
 
-	bool keyFound = isKeyInTrie(root, "key");
-	assert(keyFound);
+	// K -> E -> Y
+	root->children = kCharacter;
+	kCharacter->children = eCharacter;
+	eCharacter->children = yCharacter;
+
+	bool found = isKeyInTrie(root, "key");
+
+	assert(found);
 }
 
 void testIsKeyInTrieWhenRootNull ()
 {
-	bool keyFound = isKeyInTrie(NULL, "whatever");
-	assert(!keyFound);
+
 }
 
 void testIsKeyInTrieWhenKeyEmtpy ()
@@ -80,7 +87,7 @@ int main()
 	runTestCase(testKeyValue);
 	runTestCase(testAddGoodCase);
 	runTestCase(testAddRootNull);
-	//runTestCase(testIsKeyInTrieWhenKeyExists);
+	runTestCase(testIsKeyInTrieWhenKeyExists);
 	//runTestCase(testIsKeyInTrieWhenRootNull);
 	//runTestCase(testIsKeyInTrieWhenKeyEmtpy);
 	runTestCase(testHasCharacterInNext);

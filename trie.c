@@ -41,8 +41,10 @@ bool isKeyInTrie(trieNode* root, char* key)
 	}
 
 	trieNode* crawlNode = root->children;
-	for(int level = 0; level < lengthOfKey && !crawlNode; ++level) {
+	for(int level = 0; level <= lengthOfKey + 1; ++level) {
 		crawlNode = hasCharacterInNext(crawlNode, key[level]);
+
+		printf("%c",key[level]);
 
 		if(lengthOfKey == level && crawlNode) {
 			keyHasBeenFound = true;
