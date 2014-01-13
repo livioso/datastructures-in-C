@@ -21,3 +21,14 @@ bool contains (linkedListNode* first, int value)
 {
 	return false;
 }
+
+/* lhs	rhs		XOR
+   ----------------
+ 	0	0	=>	0
+ 	1   0   =>	1
+	0   1   =>	1
+	1   1   =>	0	*/
+unsigned int bitXOR (unsigned int lhs, unsigned int rhs)
+{
+	return 0;
+}
