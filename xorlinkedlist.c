@@ -22,13 +22,10 @@ bool contains (linkedListNode* first, int value)
 	return false;
 }
 
-/* lhs	rhs		XOR
-   ----------------
- 	0	0	=>	0
- 	1   0   =>	1
-	0   1   =>	1
-	1   1   =>	0	*/
+/* see also the corresponding unit test */
 unsigned int bitXOR (unsigned int lhs, unsigned int rhs)
 {
-	return 0;
+	unsigned int a = lhs & rhs; 
+	unsigned int b = ~lhs & ~rhs;
+	return ~a & b;
 }
