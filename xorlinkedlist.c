@@ -13,7 +13,8 @@ linkedListNode* createNode (int value)
 	}
 
 	node->value = value;
-
+	node->prev_next = NULL;
+	
 	return node;
 }
 
