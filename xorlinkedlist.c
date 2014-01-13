@@ -25,5 +25,8 @@ bool contains (linkedListNode* first, int value)
 /* see also the corresponding unit test */
 linkedListNode* XOR (linkedListNode* lhs, linkedListNode* rhs)
 {
+	printf("----> Debug -- XOR lhs is %#010x and rhs is %#010x.\n", 
+		(unsigned int) lhs, (unsigned int) rhs);
+
 	return (linkedListNode*) ((intptr_t)lhs ^ (intptr_t)rhs);
 }
