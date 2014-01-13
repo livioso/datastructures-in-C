@@ -9,4 +9,4 @@ typedef struct linkedList {
 
 linkedListNode* createNode (int value);
 bool contains (linkedListNode* first, int value);
-unsigned int bitXOR (unsigned int lhs, unsigned int rhs);
+linkedListNode* XOR (linkedListNode* lhs, linkedListNode* rhs);

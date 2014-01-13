@@ -23,7 +23,7 @@ bool contains (linkedListNode* first, int value)
 }
 
 /* see also the corresponding unit test */
-unsigned int bitXOR (unsigned int lhs, unsigned int rhs)
+linkedListNode* XOR (linkedListNode* lhs, linkedListNode* rhs)
 {
-	return lhs ^ rhs;
+	return (linkedListNode*) ((intptr_t)lhs ^ (intptr_t)rhs);
 }
