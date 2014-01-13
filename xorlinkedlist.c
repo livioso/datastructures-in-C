@@ -25,7 +25,5 @@ bool contains (linkedListNode* first, int value)
 /* see also the corresponding unit test */
 unsigned int bitXOR (unsigned int lhs, unsigned int rhs)
 {
-	unsigned int a = lhs & rhs; 
-	unsigned int b = ~lhs & ~rhs;
-	return ~a & b;
+	return lhs ^ rhs;
 }
