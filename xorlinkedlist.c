@@ -28,11 +28,26 @@ LinkedList* prevNode (LinkedList* prevOfNode)
 	return XOR (prevOfNode->prev_next, NULL);
 }
 
+void insertNodeEnd (LinkedList* currentHead, LinkedList* newHead)
+{
+	// current head is previous of new head 
+	newHead->prev_next = XOR(currentHead, NULL);
+
+	if(NULL != currentHead) {
+		// new head is next of the old head
+		currentHead->prev_next = XOR(NULL, newHead);
+	}
+
+}
+
 void insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
 {
+	// we don't have previous node for head
+	// but we have a next node (currentHead)
 	newHead->prev_next = XOR(NULL, currentHead);
 
 	if(NULL != currentHead) {
+		// previous node of the old head is the new
 		currentHead->prev_next = XOR(newHead, NULL);
 	}
 }

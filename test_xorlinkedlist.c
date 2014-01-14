@@ -18,17 +18,30 @@ void testNextInLinkedList ()
 	LinkedList* underTestB = createNode(2);
 }
 
-void testInsertNodeFront ()
+void testInsertNodeEnd ()
 {
-	LinkedList* first = createNode(1);
+	LinkedList* first = createNode(0);
 	LinkedList* second = createNode(0);
 
-	insertNodeFront(second, first);
-	assert(nextNode(first) == second);
-	//assert(prevNode(second) == first);
+	// when we insert we expect the
+	// the following first <-> second
+	insertNodeEnd(first, second);
 
-	printf("----> Debug -- first %#010x and second %#010x. first->prev is %#010x \n", 
-		(unsigned int) first, (unsigned int) second, (unsigned int) prevNode(second));
+	assert(nextNode(first) == second);
+	assert(prevNode(second) == first);
+}
+
+void testInsertNodeFront ()
+{
+	LinkedList* first = createNode(0);
+	LinkedList* second = createNode(0);
+
+	// when we insert we expect the
+	// the following first <-> second
+	insertNodeFront(second, first);
+
+	assert(nextNode(first) == second);
+	assert(prevNode(second) == first);
 }
 
 void testHelperFunctionBitwiseXOR ()
@@ -44,6 +57,7 @@ int main ()
 	printf("Running tests now... \n");
 
 	runTestCase(testCreateLinkedList);
+	runTestCase(testInsertNodeEnd);
 	runTestCase(testInsertNodeFront);
 	runTestCase(testHelperFunctionBitwiseXOR);
 

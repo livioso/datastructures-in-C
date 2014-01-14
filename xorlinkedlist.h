@@ -11,7 +11,7 @@ LinkedList* createNode (int value);
 LinkedList* nextNode (LinkedList* nextOfNode);
 LinkedList* prevNode (LinkedList* prevOfNode);
 
-void insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
+void insertNodeEnd (LinkedList* currentHead, LinkedList* newHead);
 void insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
 bool containsValue (LinkedList* first, int value);
 
