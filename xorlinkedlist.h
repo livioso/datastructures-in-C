@@ -10,6 +10,9 @@ typedef struct LinkedList {
 LinkedList* createNode (int value);
 LinkedList* nextNode (LinkedList* nextOfNode);
 LinkedList* prevNode (LinkedList* prevOfNode);
-LinkedList* insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
-bool contains (LinkedList* first, int value);
+
+void insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
+void insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
+bool containsValue (LinkedList* first, int value);
+
 LinkedList* XOR (LinkedList* lhs, LinkedList* rhs);

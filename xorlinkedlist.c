@@ -20,15 +20,15 @@ LinkedList* createNode (int value)
 
 LinkedList* nextNode (LinkedList* nextOfNode)
 {
-	return XOR (nextOfNode, nextOfNode->prev_next);
+	return XOR (NULL, nextOfNode->prev_next);
 }
 
 LinkedList* prevNode (LinkedList* prevOfNode)
 {
-	return XOR (prevOfNode->prev_next, prevOfNode);;
+	return XOR (prevOfNode->prev_next, NULL);;
 }
 
-LinkedList* insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
+void insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
 {
 	newHead->prev_next = XOR(NULL, currentHead);
 
@@ -36,11 +36,9 @@ LinkedList* insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
 		LinkedList* next = XOR(currentHead, NULL);
 		currentHead->prev_next = XOR(newHead, next);
 	}
-
-	return newHead;
 }
 
-bool contains (LinkedList* first, int value) 
+bool containsValue (LinkedList* first, int value) 
 {
 	return false;
 }

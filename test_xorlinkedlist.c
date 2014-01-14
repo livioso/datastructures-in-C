@@ -23,8 +23,7 @@ void testInsertNodeFront ()
 	LinkedList* first = createNode(1);
 	LinkedList* second = createNode(0);
 
-	LinkedList* underTest = insertNodeFront(second, first);
-	assert(underTest == first);
+	insertNodeFront(second, first);
 
 	printf("----> Debug -- first %#010x and second %#010x. first->next is %#010x \n", 
 		(unsigned int) first, (unsigned int) second, (unsigned int) nextNode(first));
