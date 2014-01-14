@@ -7,19 +7,27 @@
 
 void testCreateLinkedList ()
 {
-	LinkedList* underTest = createNode(1);
+	LinkedList* underTest = createNode(999);
 	assert(underTest);
+	assert(999 == underTest->value);
+}
+
+void testNextInLinkedList ()
+{
+	LinkedList* underTestA = createNode(1);
+	LinkedList* underTestB = createNode(2);
 }
 
 void testInsertNodeFront ()
 {
-	LinkedList* underTestCurrentHead = createNode(1);
-	LinkedList* underTestNewHead = createNode(2);
+	LinkedList* first = createNode(1);
+	LinkedList* second = createNode(0);
 
-	insertNodeFront(underTestCurrentHead, underTestNewHead);
+	LinkedList* underTest = insertNodeFront(second, first);
+	assert(underTest == first);
 
-
-	//assert(insertNodeFront);
+	printf("----> Debug -- first %#010x and second %#010x. first->next is %#010x \n", 
+		(unsigned int) first, (unsigned int) second, (unsigned int) nextNode(first));
 }
 
 void testHelperFunctionBitwiseXOR ()

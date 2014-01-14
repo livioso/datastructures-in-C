@@ -20,21 +20,21 @@ LinkedList* createNode (int value)
 
 LinkedList* nextNode (LinkedList* nextOfNode)
 {
-	return NULL;
+	return XOR (nextOfNode, nextOfNode->prev_next);
 }
 
 LinkedList* prevNode (LinkedList* prevOfNode)
 {
-	return NULL;
+	return XOR (prevOfNode->prev_next, prevOfNode);;
 }
 
 LinkedList* insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
 {
-	//newHead->prev_next = (struct LinkedList*) XOR(currentHead, NULL);
+	newHead->prev_next = XOR(NULL, currentHead);
 
 	if(NULL != currentHead) {
-		//struct LinkedList* next = (struct LinkedList*) XOR(currentHead->prev_next, NULL);
-		//currentHead->prev_next = (struct LinkedList*) XOR(newHead, next);
+		LinkedList* next = XOR(currentHead, NULL);
+		currentHead->prev_next = XOR(newHead, next);
 	}
 
 	return newHead;
