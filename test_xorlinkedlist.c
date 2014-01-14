@@ -12,10 +12,23 @@ void testCreateLinkedList ()
 	assert(999 == underTest->value);
 }
 
-void testNextInLinkedList ()
+void testPrevNextInLinkedList ()
 {
-	LinkedList* underTestA = createNode(1);
-	LinkedList* underTestB = createNode(2);
+	LinkedList* first = createNode(0);
+	LinkedList* second = createNode(0);
+
+	// initially we should get NULL for 
+	// nextNode and prevNode, right?
+	assert(NULL == nextNode(first));
+	assert(NULL == prevNode(first));
+
+	// now we should have something like: 
+	// NULL <-> first <-> second <-> NULL
+	insertNodeEnd(first, second); 
+	assert(NULL == prevNode(first));
+	assert(NULL == nextNode(second));
+	assert(second == nextNode(first));
+	assert(first == prevNode(second));
 }
 
 void testInsertNodeEnd ()
@@ -57,6 +70,7 @@ int main ()
 	printf("Running tests now... \n");
 
 	runTestCase(testCreateLinkedList);
+	runTestCase(testPrevNextInLinkedList);
 	runTestCase(testInsertNodeEnd);
 	runTestCase(testInsertNodeFront);
 	runTestCase(testHelperFunctionBitwiseXOR);
