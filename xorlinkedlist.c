@@ -25,7 +25,7 @@ LinkedList* nextNode (LinkedList* nextOfNode)
 
 LinkedList* prevNode (LinkedList* prevOfNode)
 {
-	return XOR (prevOfNode->prev_next, NULL);;
+	return XOR (prevOfNode->prev_next, NULL);
 }
 
 void insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
@@ -33,8 +33,7 @@ void insertNodeFront (LinkedList* currentHead, LinkedList* newHead)
 	newHead->prev_next = XOR(NULL, currentHead);
 
 	if(NULL != currentHead) {
-		LinkedList* next = XOR(currentHead, NULL);
-		currentHead->prev_next = XOR(newHead, next);
+		currentHead->prev_next = XOR(newHead, NULL);
 	}
 }
 

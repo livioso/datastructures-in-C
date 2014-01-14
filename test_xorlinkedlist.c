@@ -24,9 +24,11 @@ void testInsertNodeFront ()
 	LinkedList* second = createNode(0);
 
 	insertNodeFront(second, first);
+	assert(nextNode(first) == second);
+	//assert(prevNode(second) == first);
 
-	printf("----> Debug -- first %#010x and second %#010x. first->next is %#010x \n", 
-		(unsigned int) first, (unsigned int) second, (unsigned int) nextNode(first));
+	printf("----> Debug -- first %#010x and second %#010x. first->prev is %#010x \n", 
+		(unsigned int) first, (unsigned int) second, (unsigned int) prevNode(second));
 }
 
 void testHelperFunctionBitwiseXOR ()
