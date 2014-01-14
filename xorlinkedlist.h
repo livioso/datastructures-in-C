@@ -1,12 +1,15 @@
 #include <stdbool.h>
 
-typedef struct linkedList {
+typedef struct LinkedList {
 	int value;
 	// stores next and previous node
 	// so called XOR linked list ;-)
 	struct LinkedList* prev_next;
-} linkedListNode;
+} LinkedList;
 
-linkedListNode* createNode (int value);
-bool contains (linkedListNode* first, int value);
-linkedListNode* XOR (linkedListNode* lhs, linkedListNode* rhs);
+LinkedList* createNode (int value);
+LinkedList* nextNode (LinkedList* nextOfNode);
+LinkedList* prevNode (LinkedList* prevOfNode);
+LinkedList* insertNodeFront (LinkedList* currentHead, LinkedList* newHead);
+bool contains (LinkedList* first, int value);
+LinkedList* XOR (LinkedList* lhs, LinkedList* rhs);
