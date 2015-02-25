@@ -60,8 +60,5 @@ bool containsValue (LinkedList* first, int value)
 /* see also the corresponding unit test */
 LinkedList* XOR (LinkedList* lhs, LinkedList* rhs)
 {
-	printf("----> Debug -- XOR lhs is %#010x and rhs is %#010x.\n", 
-		(unsigned int) lhs, (unsigned int) rhs);
-
 	return (LinkedList*) ((intptr_t)lhs ^ (intptr_t)rhs);
 }
